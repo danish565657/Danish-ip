@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IP Tracker</title>
+</head>
+<body>
+  <h1>My IP Tracker</h1>
+  <p>Your IP address is: <span id="ip"></span></p>
+
+  <script>
+    fetch("https://api.ipify.org?format=json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("ip").textContent = data.ip;
+      });
+  </script>
+</body>
+</html>
